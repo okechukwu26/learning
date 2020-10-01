@@ -4,8 +4,6 @@ const cor = require('cors');
 const app = express();
 const userRouter = require('./Routes/user');
 const mongoose = require('mongoose');
-
-app.use(cor());
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   res.header(
@@ -25,6 +23,7 @@ app.use((req, res, next) => {
   }
   next();
 });
+
 app.use(express.json());
 
 const port = process.env.PORT || 3000;
