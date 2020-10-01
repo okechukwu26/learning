@@ -85,7 +85,7 @@ userSchema.methods.generateAuthToken = async function () {
   const user = this;
   const token = jwt.sign(
     { _id: user._id.toString(), email: user.email },
-    keys.JWT,
+    'afrilearning',
     { expiresIn: '1 day' }
   );
   user.tokens = user.tokens.concat({ token });

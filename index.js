@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 app.use(cor());
 app.use(express.json());
 
-const port = keys.port;
+const port = process.env.PORT || 3000;
 app.use('/api', userRouter);
 
 mongoose
